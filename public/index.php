@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
-// 1:13:00
+// 2:01:30
 use app\core\App;
 use app\controllers\SiteController;
 use app\controllers\AuthController;
