@@ -10,6 +10,8 @@ class App
     public  $router;
     public  $request;
     public $response;
+    public $controller;
+
     public static $app;
     public static $ROOT_DIR;
 
@@ -26,5 +28,31 @@ class App
     public function run()
     {
         echo $this->router->resolve();
+    }
+
+    public function isGet()
+    {
+        return $this->request->isGet();
+    }
+
+    public function isPost()
+    {
+        return $this->request->isPost();
+    }
+
+    /**
+     * @return Controller
+     */
+    public function getController(): Controller
+    {
+        return $this->controller;
+    }
+
+    /**
+     * @param Controller $controller
+     */
+    public function setController(Controller $controller): void
+    {
+        $this->controller = $controller;
     }
 }
