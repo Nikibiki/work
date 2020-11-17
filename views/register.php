@@ -2,10 +2,11 @@
 /**
  * @param app\controllers\AuthController $model
  */
+use app\core\form\Form;
 ?>
 
 <h1>Create an account</h1>
-<?php?>j
+<?= Form::begin() ?>
 <form action="" method="post">
     <div class="row">
         <div class="col">
