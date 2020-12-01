@@ -6,36 +6,17 @@ use app\core\form\Form;
 ?>
 
 <h1>Create an account</h1>
-<?= Form::begin() ?>
-<form action="" method="post">
+<? $form = Form::begin('', 'post')?>
     <div class="row">
         <div class="col">
-            <div class="form-group">
-                <label>First Name</label>
-                <input type="text" class="form-control <?= $model->hasError('fname') ? 'is-invalid' : 'is-valid'?>" name="fname" value="<?= $model->fname;?>">
-                <div class="invalid-feedback">
-                    <?= $model->getFirstError('fname')?>
-                </div>
-            </div>
+            <?= $form->field( $model, 'fname');?>
         </div>
         <div class="col">
-            <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" class="form-control" name="lname" value="<?= $model->lname;?>">
-            </div>
+            <?= $form->field( $model, 'lname');?>
         </div>
     </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" name="email">
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input class="form-control" name="password" type="password">
-    </div>
-    <div class="form-group">
-        <label>Confirm Password</label>
-        <input class="form-control" name="cpassword" type="password">
-    </div>
+    <?= $form->field( $model, 'email');?>
+    <?= $form->field( $model, 'password')->passwordField();?>
+    <?= $form->field( $model, 'cpassword')->passwordField();?>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<? Form::end()?>

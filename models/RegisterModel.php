@@ -7,11 +7,11 @@ use app\core\Model;
 
 class RegisterModel extends Model
 {
-    public $fname;
-    public $lname;
-    public $email;
-    public $password;
-    public $cpassword;
+    public string $fname = '';
+    public string $lname = '';
+    public string $email = '';
+    public string $password = '';
+    public string $cpassword = '';
 
     public function save()
     {
