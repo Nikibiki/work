@@ -7,7 +7,7 @@ namespace app\core;
 abstract class DbModel extends Model
 {
     abstract public function tableName(): string;
-    abstruct public function attributes(): array;
+    abstract public function attributes(): array;
 
     public function save()
     {
