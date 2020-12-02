@@ -3,9 +3,10 @@
 
 namespace app\models;
 
+use app\core\DbModel;
 use app\core\Model;
 
-class RegisterModel extends Model
+class User extends DbModel
 {
     public string $fname = '';
     public string $lname = '';
@@ -13,9 +14,9 @@ class RegisterModel extends Model
     public string $password = '';
     public string $cpassword = '';
 
-    public function save()
+    public function tableName(): string
     {
-
+        return 'user';
     }
 
     public function rules() : array
