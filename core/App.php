@@ -9,6 +9,7 @@ class App
     public Router $router;
     public Request $request;
     public Response $response;
+    public Session $session;
     public Database $db;
     public Controller $controller;
 
@@ -22,6 +23,7 @@ class App
         self::$ROOT_DIR = $rootPath;
         $this->request = new Request();
         $this->response = new Response();
+        $this->session = new Session();
         $this->router = new Router( $this->request, $this->response );
 
         $this->db = new Database( $config['db'] );
